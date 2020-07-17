@@ -11,10 +11,10 @@ const Restaurant = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 120px;
-  margin-left: -120px;
+  margin-left: -150px;
 
   .header {
-      color: whitesmoke;
+      color: #F5D020;
       font-size: 27px;
       margin-bottom: 24px;
   }
@@ -28,7 +28,7 @@ const Restaurant = styled.div`
   .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 24px;
 
     & .RestaurantCard {
       margin-bottom: 60px;
@@ -37,7 +37,7 @@ const Restaurant = styled.div`
   }
 `
 
-class SecondPage extends React.Component {
+class SecondPage extends React.PureComponent {
   constructor() {
     super();
 

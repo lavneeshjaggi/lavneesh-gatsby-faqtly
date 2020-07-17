@@ -53,7 +53,7 @@ const Restaurant = styled.div`
 
         .subtitle {
             font-weight: lighter;
-            font-size: 16px;
+            font-size: 18px;
         }
     }
 
@@ -65,18 +65,29 @@ const Restaurant = styled.div`
         width: 100%;
 
         .zomato {
+            color: #FC575E;
             margin-bottom: 15px;
             width: 50%;
+
+            &:hover {
+                color: #ED456D;
+            }
         }
 
         .maps {
+            color: #009FFD;
             width: 40%;
+
+            &:hover {
+                color: #0CBABA;
+            }
         }
     }
 `
 
 const RestaurantCard = ({ restaurant }) => {
-    var { name, id, featured_image, average_cost_for_two, user_rating } = restaurant;
+    var { name, featured_image, average_cost_for_two, user_rating, location, url } = restaurant;
+    let { address } = location;
 
     if (featured_image.length == 0) {
         featured_image = 'https://images.unsplash.com/photo-1556694795-b6423d3d5b28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
@@ -92,12 +103,12 @@ const RestaurantCard = ({ restaurant }) => {
             />
             <div className='content'>
                 <h1 className='title'>{name.toUpperCase()}</h1>
-                <span className='subtitle'>Average Cost: {average_cost_for_two}</span>
-                <span className='subtitle'>Rating: {user_rating.aggregate_rating}</span>
+                <span className='subtitle'>Average Cost: ${average_cost_for_two}</span>
+                <span className='subtitle'>Rating: {user_rating.aggregate_rating}/5</span>
             </div>
             <div className='footer'>
-                <Link to="https://www.google.com" className='zomato'>Zomato Page</Link>
-                <Link to="https://www.google.com" className='maps'>Google Maps</Link>
+                <Link to={url} className='zomato'>Zomato Page</Link>
+                <Link to={`https://www.google.com/maps/@28.7188443,77.1370109,15z`} className='maps'>Google Maps</Link>
             </div>
         </Restaurant>
     )
