@@ -8,11 +8,32 @@ import RestaurantCard from "../components/restaurant-card.component"
 import styled from 'styled-components';
 
 const Restaurant = styled.div`
-  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120px;
+  margin-left: -120px;
 
-  h2 {
-    color: #F5D020;
-    font-size: 2rem
+  .header {
+      color: whitesmoke;
+      font-size: 27px;
+      margin-bottom: 24px;
+  }
+
+  .title {
+      color: #FC575E;
+      font-size: 27px;
+      margin-bottom: 24px;
+  }
+
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+
+    & .RestaurantCard {
+      margin-bottom: 60px;
+      overflow: hidden;
+    }
   }
 `
 
@@ -47,16 +68,18 @@ class SecondPage extends React.Component {
       <Layout>
         <SEO title="Page two" />
         <Restaurant>
-          <h2>Welcome to restaurant recommendations by Faqtly</h2>
-          <p>We hope you find what you are looking for!</p>
+          <h1 className='header'>Welcome to restaurant recommendations by Faqtly</h1>
+          <h1 className='title'>Restaurants</h1>
+          <div className='items'>
+            {
+              restaurants.map(( establishment ) => (
+                console.log(establishment.restaurant),
+                <RestaurantCard key={establishment.restaurant.id} restaurant={establishment.restaurant} />
+              ))
+            }
+          </div>
         </Restaurant>
-          {
-            restaurants.map(( establishment ) => (
-              console.log(establishment.restaurant),
-              <RestaurantCard key={establishment.restaurant.id} restaurant={establishment.restaurant} />
-            ))
-          }
-        <Link to="/">Go back to the homepage</Link>
+      <Link to="/">Go back to the homepage</Link>
       </Layout>
     )
   }
