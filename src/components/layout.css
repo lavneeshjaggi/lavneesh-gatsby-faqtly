@@ -4,6 +4,9 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #414345, #232526); 
+  background: linear-gradient(to left, #414345, #232526); 
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,6 +44,8 @@ template {
 }
 a {
   background-color: transparent;
+  color: #20BF55;
+  text-decoration: none;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
