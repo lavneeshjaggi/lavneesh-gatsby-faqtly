@@ -8,6 +8,10 @@ import styled from "styled-components"
 
 const Index = styled.div`
   color: whitesmoke;
+
+  h1 {
+    color: #F5D020;
+  }
 `
 
 const IndexPage = () => (
