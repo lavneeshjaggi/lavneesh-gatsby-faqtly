@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import styled from 'styled-components';
 
@@ -14,11 +15,6 @@ const Restaurant = styled.div`
 
     &:hover {
         cursor: pointer;
-
-        & .img {
-            transform: scale(1.1);
-            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-        }
 
         & .content {
             opacity: 0.9;
@@ -36,14 +32,14 @@ const Restaurant = styled.div`
 
     .content {
         background: #232526;
+        border: 1px solid #F5D020;
         margin-top: 120px;
-        height: 90px;
+        height: 120px;
         padding: 0 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: 1px solid black;
         opacity: 0.6;
         position: absolute;
         width: 18vw;
@@ -54,6 +50,11 @@ const Restaurant = styled.div`
             font-weight: bold;
             margin: 0 6px 0;
         }
+
+        .subtitle {
+            font-weight: lighter;
+            font-size: 16px;
+        }
     }
 
     .footer {
@@ -63,19 +64,19 @@ const Restaurant = styled.div`
         justify-content: space-between;
         width: 100%;
 
-        .name {
+        .zomato {
             margin-bottom: 15px;
-            width: 90%;
+            width: 50%;
         }
 
-        .price {
-            width: 10%;
+        .maps {
+            width: 40%;
         }
     }
 `
 
 const RestaurantCard = ({ restaurant }) => {
-    var { name, id, featured_image} = restaurant;
+    var { name, id, featured_image, average_cost_for_two, user_rating } = restaurant;
 
     if (featured_image.length == 0) {
         featured_image = 'https://images.unsplash.com/photo-1556694795-b6423d3d5b28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
@@ -91,9 +92,12 @@ const RestaurantCard = ({ restaurant }) => {
             />
             <div className='content'>
                 <h1 className='title'>{name.toUpperCase()}</h1>
+                <span className='subtitle'>Average Cost: {average_cost_for_two}</span>
+                <span className='subtitle'>Rating: {user_rating.aggregate_rating}</span>
             </div>
             <div className='footer'>
-                <span className='name'>{id}</span>
+                <Link to="https://www.google.com" className='zomato'>Zomato Page</Link>
+                <Link to="https://www.google.com" className='maps'>Google Maps</Link>
             </div>
         </Restaurant>
     )
