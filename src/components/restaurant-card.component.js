@@ -76,10 +76,20 @@ const Restaurant = styled.div`
         justify-content: space-between;
         width: 100%;
 
+        @media screen and (max-width: 800px) {
+            .zomato {
+                width: 50%;
+            }
+
+            .maps {
+                width: 50%;
+            }
+        }
+
         .zomato {
             color: #FC575E;
             margin-bottom: 15px;
-            width: 50%;
+            width: 60%;
 
             &:hover {
                 color: #ED456D;
@@ -88,7 +98,7 @@ const Restaurant = styled.div`
 
         .maps {
             color: #009FFD;
-            width: 50%;
+            width: 40%;
 
             &:hover {
                 color: #0CBABA;
