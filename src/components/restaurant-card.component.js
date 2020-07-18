@@ -76,15 +76,6 @@ const Restaurant = styled.div`
         justify-content: space-between;
         width: 100%;
 
-        @media screen and (max-width: 800px) {
-            .zomato {
-                width: 50%;
-            }
-
-            .maps {
-                width: 50%;
-            }
-        }
 
         .zomato {
             color: #FC575E;
@@ -109,8 +100,9 @@ const Restaurant = styled.div`
 
 const RestaurantCard = ({ restaurant }) => {
     var { name, featured_image, average_cost_for_two, user_rating, location, url } = restaurant;
+    var { address } = location;
 
-    if (featured_image.length == 0) {
+    if (featured_image.length === 0) {
         featured_image = 'https://images.unsplash.com/photo-1556694795-b6423d3d5b28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
     }
 
@@ -129,7 +121,7 @@ const RestaurantCard = ({ restaurant }) => {
             </div>
             <div className='footer'>
                 <Link to={url} className='zomato'>Zomato</Link>
-                <Link to={`https://www.google.com/maps/@28.7188443,77.1370109,15z`} className='maps'>Google Maps</Link>
+                <Link to={`https://www.google.com/maps/place/${address}`} className='maps'>Google Maps</Link>
             </div>
         </Restaurant>
     )

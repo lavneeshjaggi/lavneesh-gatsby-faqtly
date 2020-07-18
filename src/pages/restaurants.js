@@ -84,7 +84,6 @@ class SecondPage extends React.Component {
           ) : (
             <div className='items'>
               {restaurants.map(( establishment ) => (
-                console.log(establishment.restaurant),
                 <RestaurantCard key={establishment.restaurant.id} restaurant={establishment.restaurant} />
               ))}
             </div>
