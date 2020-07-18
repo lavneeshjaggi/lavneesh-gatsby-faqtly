@@ -87,7 +87,6 @@ const Restaurant = styled.div`
 
 const RestaurantCard = ({ restaurant }) => {
     var { name, featured_image, average_cost_for_two, user_rating, location, url } = restaurant;
-    let { address } = location;
 
     if (featured_image.length == 0) {
         featured_image = 'https://images.unsplash.com/photo-1556694795-b6423d3d5b28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
@@ -95,17 +94,17 @@ const RestaurantCard = ({ restaurant }) => {
 
     return (
         <Restaurant>
-            <div
-                className='img' 
-                style={{
-                    backgroundImage: `url(${featured_image})`
-                }}
-            />
-            <div className='content'>
-                <h1 className='title'>{name.toUpperCase()}</h1>
-                <span className='subtitle'>Average Cost: ${average_cost_for_two}</span>
-                <span className='subtitle'>Rating: {user_rating.aggregate_rating}/5</span>
-            </div>
+                <div
+                    className='img' 
+                    style={{
+                        backgroundImage: `url(${featured_image})`
+                    }}
+                />
+                <div className='content'>
+                    <h1 className='title'>{name.toUpperCase()}</h1>
+                    <span className='subtitle'>Average Cost: ${average_cost_for_two}</span>
+                    <span className='subtitle'>Rating: {user_rating.aggregate_rating}/5</span>
+                </div>
             <div className='footer'>
                 <Link to={url} className='zomato'>Zomato Page</Link>
                 <Link to={`https://www.google.com/maps/@28.7188443,77.1370109,15z`} className='maps'>Google Maps</Link>

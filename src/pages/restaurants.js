@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RestaurantCard from "../components/restaurant-card.component"
+import Spinner from "../components/spinner.component"
 
 import styled from 'styled-components';
 
@@ -30,6 +31,11 @@ const Restaurant = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 24px;
 
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 27px;
+    }
+
     & .RestaurantCard {
       margin-bottom: 60px;
       overflow: hidden;
@@ -37,7 +43,7 @@ const Restaurant = styled.div`
   }
 `
 
-class SecondPage extends React.PureComponent {
+class SecondPage extends React.Component {
   constructor() {
     super();
 
@@ -62,7 +68,7 @@ class SecondPage extends React.PureComponent {
   }
 
   render() {
-    const { restaurants } = this.state;
+    const { loading, restaurants } = this.state;
 
     return (
       <Layout>
@@ -70,14 +76,16 @@ class SecondPage extends React.PureComponent {
         <Restaurant>
           <h1 className='header'>Welcome to restaurant recommendations by Faqtly</h1>
           <h1 className='title'>Restaurants</h1>
-          <div className='items'>
-            {
-              restaurants.map(( establishment ) => (
+          {loading ? (
+            <Spinner />
+          ) : (
+            <div className='items'>
+              {restaurants.map(( establishment ) => (
                 console.log(establishment.restaurant),
                 <RestaurantCard key={establishment.restaurant.id} restaurant={establishment.restaurant} />
-              ))
-            }
-          </div>
+              ))}
+            </div>
+          )}
         </Restaurant>
       <Link to="/">Go back to the homepage</Link>
       </Layout>
