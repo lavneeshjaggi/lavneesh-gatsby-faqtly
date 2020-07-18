@@ -52,6 +52,7 @@ const Restaurant = styled.div`
         @media screen and (max-width: 800px) {
             margin-top: 60px;
             height: 180px;
+            opacity: 0.9;
             width: 36vw;
         }
 
@@ -105,17 +106,17 @@ const RestaurantCard = ({ restaurant }) => {
 
     return (
         <Restaurant>
-                <div
-                    className='img' 
-                    style={{
-                        backgroundImage: `url(${featured_image})`
-                    }}
-                />
-                <div className='content'>
-                    <h1 className='title'>{name.toUpperCase()}</h1>
-                    <span className='subtitle'>Average Cost: ${average_cost_for_two}</span>
-                    <span className='subtitle'>Rating: {user_rating.aggregate_rating}/5</span>
-                </div>
+            <div
+                className='img' 
+                style={{
+                    backgroundImage: `url(${featured_image})`
+                }}
+            />
+            <div className='content'>
+                <h1 className='title'>{name.toUpperCase()}</h1>
+                <span className='subtitle'>Average Cost: ${average_cost_for_two}</span>
+                <span className='subtitle'>Rating: {user_rating.aggregate_rating}/5</span>
+            </div>
             <div className='footer'>
                 <Link to={url} className='zomato'>Zomato</Link>
                 <Link to={`https://www.google.com/maps/@28.7188443,77.1370109,15z`} className='maps'>Google Maps</Link>

@@ -75,7 +75,7 @@ class SecondPage extends React.Component {
 
     return (
       <Layout>
-        <SEO title="Page two" />
+        <SEO title="Restaurant Recommendations - Faqtly" />
         <Restaurant>
           <h1 className='header'>Welcome to restaurant recommendations by Faqtly</h1>
           <h1 className='title'>Restaurants</h1>
