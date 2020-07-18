@@ -9,9 +9,14 @@ const Restaurant = styled.div`
     display: flex;
     flex-direction: column;
     height: 360px;
+    margin-bottom: 30px;
     overflow: hidden;
     position: relative;
     width: 21vw;
+
+    @media screen and (max-width: 800px) {
+        width: 60vw;
+    }
 
     &:hover {
         cursor: pointer;
@@ -43,6 +48,12 @@ const Restaurant = styled.div`
         opacity: 0.6;
         position: absolute;
         width: 18vw;
+
+        @media screen and (max-width: 800px) {
+            margin-top: 60px;
+            height: 180px;
+            width: 36vw;
+        }
 
         .title {
             color: #F5D020;
@@ -106,7 +117,7 @@ const RestaurantCard = ({ restaurant }) => {
                     <span className='subtitle'>Rating: {user_rating.aggregate_rating}/5</span>
                 </div>
             <div className='footer'>
-                <Link to={url} className='zomato'>Zomato Page</Link>
+                <Link to={url} className='zomato'>Zomato</Link>
                 <Link to={`https://www.google.com/maps/@28.7188443,77.1370109,15z`} className='maps'>Google Maps</Link>
             </div>
         </Restaurant>

@@ -9,15 +9,19 @@ import Spinner from "../components/spinner.component"
 import styled from 'styled-components';
 
 const Restaurant = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 120px;
-  margin-left: -150px;
+  justify-content: center;
 
   .header {
       color: #F5D020;
       font-size: 27px;
       margin-bottom: 24px;
+
+      @media screen and (max-width: 800px) {
+        font-size: 21px;
+      }
   }
 
   .title {
@@ -32,8 +36,7 @@ const Restaurant = styled.div`
     grid-gap: 24px;
 
     @media screen and (max-width: 800px) {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 27px;
+      grid-template-columns: 1fr;
     }
 
     & .RestaurantCard {
