@@ -11,10 +11,6 @@ const Index = styled.div`
   color: whitesmoke;
   justify-content: center;
 
-  @media screen and (max-width: 800px) {
-    background: #232526;
-  }
-
   h1 {
     color: #F5D020;
   }
