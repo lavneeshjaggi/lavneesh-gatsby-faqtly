@@ -99,8 +99,9 @@ const Restaurant = styled.div`
 `
 
 const RestaurantCard = ({ restaurant }) => {
-    var { name, featured_image, average_cost_for_two, user_rating, location, url } = restaurant;
-    var { address } = location;
+    const { name, average_cost_for_two, user_rating, location, url } = restaurant;
+    var { featured_image } = restaurant;
+    const { address } = location;
 
     if (featured_image.length === 0) {
         featured_image = 'https://images.unsplash.com/photo-1556694795-b6423d3d5b28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
