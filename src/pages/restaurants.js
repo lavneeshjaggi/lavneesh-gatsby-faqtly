@@ -25,9 +25,9 @@ const Restaurant = styled.div`
   }
 
   .title {
-      color: #FC575E;
-      font-size: 27px;
-      margin-bottom: 24px;
+    color: #FC575E;
+    font-size: 27px;
+    margin-bottom: 24px;
   }
 
   .items {

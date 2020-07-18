@@ -8,9 +8,12 @@ import styled from "styled-components"
 
 const Index = styled.div`
   align-items: center;
-  background: #232526;
   color: whitesmoke;
   justify-content: center;
+
+  @media screen and (max-width: 800px) {
+    background: #232526;
+  }
 
   h1 {
     color: #F5D020;

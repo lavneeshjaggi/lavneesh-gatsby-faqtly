@@ -88,7 +88,7 @@ const Restaurant = styled.div`
 
         .maps {
             color: #009FFD;
-            width: 40%;
+            width: 50%;
 
             &:hover {
                 color: #0CBABA;
