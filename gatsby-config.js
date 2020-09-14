@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `faqtly-gatsby-lavneesh`,
+    title: `Restaurant Recommendations by Lavneesh`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `Lavneesh Jaggi`,
   },
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    'gatsby-plugin-styled-components',
+    "gatsby-plugin-styled-components",
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, 
+        icon: `src/images/gatsby-icon.png`,
       },
     },
   ],

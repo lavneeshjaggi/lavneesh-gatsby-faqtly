@@ -12,13 +12,13 @@ const Index = styled.div`
   justify-content: center;
 
   h1 {
-    color: #F5D020;
+    color: #f5d020;
   }
 `
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Restaurant Recommendations - Faqtly" />
+    <SEO title="Restaurant Recommendations" />
     <Index>
       <h1>Welcome to restaurant Recommendations</h1>
       <p>This is a one stop website for all your restaurant recommendations.</p>
